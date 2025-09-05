@@ -9,4 +9,12 @@ Console.WriteLine("Join CS Internship Program:");
 var CallToAction = $"Check this out: {csInternshipUrl.Trim()}";
 var replacedString = CallToAction.Replace("Check this out:", "Did you enjoy");
 Console.WriteLine($"{CallToAction}");
+Console.WriteLine(
+    $"Did last message contain the URL? "
+        + (
+            CallToAction.Contains(csInternshipUrl)
+                ? "Yes, call to action contains the URL."
+                : "No, call to action does not contain the URL."
+        )
+);
 Console.WriteLine($"{replacedString}?");
