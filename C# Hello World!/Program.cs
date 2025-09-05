@@ -5,4 +5,8 @@ Console.WriteLine("This is C# 13.0!");
 Console.WriteLine("Enjoy coding!");
 Console.WriteLine();
 Console.WriteLine("Join CS Internship Program:");
-Console.WriteLine($"Check out this: {csInternshipUrl.Trim()}");
+
+var CallToAction = $"Check this out: {csInternshipUrl.Trim()}";
+var replacedString = CallToAction.Replace("Check this out:", "Did you enjoy");
+Console.WriteLine($"{CallToAction}");
+Console.WriteLine($"{replacedString}?");
