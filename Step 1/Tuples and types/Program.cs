@@ -18,17 +18,24 @@ class Program
         Console.WriteLine($"The comparison of pt and pt2 results in: {pt.CompareTo(pt2)}");
 
         var pt3 = new Point(1, 4);
-        var pt4 = pt3 with { Y = 10 };
-        pt4.Slope();
+        Point pt4;
+
+        if (pt3.X == 1 && pt3.Y == 4)
+        {
+            pt4 = pt3 with { Y = 10 };
+            while (pt4.Slope() > 2)
+            {
+                pt4 = pt4 with { Y = pt4.Y - 1 };
+                Console.WriteLine($"Lowering the Y value of pt4 to {pt4.Y}");
+            }
+        }
     }
 
     public record Point(int X, int Y)
     {
         public double Slope()
         {
-            double slope = Y / X;
-            Console.WriteLine(slope);
-            return slope;
+            return Y / X;
         }
     }
 }
