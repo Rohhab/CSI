@@ -15,7 +15,7 @@ class Program
 
         var pt2 = pt with { Y = 10 };
         Console.WriteLine($"The point 'pt2' is at {pt2}.");
-        Console.WriteLine(pt.CompareTo(pt2));
+        Console.WriteLine($"The comparison of pt and pt2 results in: {pt.CompareTo(pt2)}");
 
         var pt3 = new Point(1, 4);
         var pt4 = pt3 with { Y = 10 };
