@@ -1,40 +1,57 @@
 ﻿List<int> numbers = new();
-bool condition = true;
-
-Console.WriteLine("Enter a number or type 'exit' to quit:");
-while (condition)
+Dictionary<int, string> promptStates = new()
 {
-    string input = Console.ReadLine();
-    if (input.ToLower() == "exit")
+    { 1, "Enter a number or type 'exit' to quit:" },
     {
-        condition = false;
+        2,
+        "Enter a number to continue. Type 'exit' to quit; or enter 'Bubble' to sort the list using Bubble Sort:"
+    },
+    { 3, "Invalid input. Please enter a valid number, 'bubble' to sort or 'exit' to quit." },
+};
+
+Console.WriteLine(promptStates[1]);
+
+while (true)
+{
+    string? input = Console.ReadLine();
+    if (input?.ToLower() == "exit")
+        break;
+
+    if (input?.ToLower() == "bubble")
+    {
+        BubbleSort(numbers);
+        Console.WriteLine($"Sorted list: {string.Join(", ", numbers)}");
+        Console.WriteLine(promptStates[2]);
+        continue;
     }
 
     if (int.TryParse(input, out int number))
     {
         numbers.Add(number);
-        BubbleSort(numbers);
-        Console.Write($"numbers contains: ");
-        foreach (var num in numbers)
-        {
-            Console.Write($"{num}, ");
-        }
+        Console.WriteLine($"numbers contains: {string.Join(", ", numbers)}");
+        Console.WriteLine(promptStates[2]);
     }
     else
     {
-        Console.WriteLine("Invalid input. Please enter a valid number or 'exit' to quit.");
+        Console.WriteLine(promptStates[3]);
     }
 }
 
 static void BubbleSort(List<int> list)
 {
-    for (int i = 0; i < list.Count - 2; i++)
+    bool swapped;
+    for (int i = 0; i < list.Count - 1; i++)
     {
-        int temp = list[i];
-        if (list[i] > list[i + 1])
+        swapped = false;
+        for (int j = 0; j < list.Count - i - 1; j++)
         {
-            list[i] = list[i + 1];
-            list[i + 1] = temp;
+            if (list[j] > list[j + 1])
+            {
+                (list[j], list[j + 1]) = (list[j + 1], list[j]);
+                swapped = true;
+            }
         }
+        if (!swapped)
+            break;
     }
 }
