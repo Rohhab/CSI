@@ -5,7 +5,7 @@
 //public class TypeMaster
 //{
 //    public string name = "Pouria";
-//#pragma warning disable //showcase directives
+//#pragma warning disable //showcase preprocessing directives
 //    private int age = 33;
 //#pragma warning restore
 //    private bool adult = true;
@@ -36,21 +36,40 @@
 //        var counter = new Counter();
 //        var world = "World!";
 
-        //var typeMaster = new TypeMaster();
-        //var secondTypeMaster = new TypeMaster();
-        //var anotherTypeMaster = typeMaster;
+//var typeMaster = new TypeMaster();
+//var secondTypeMaster = new TypeMaster();
+//var anotherTypeMaster = typeMaster;
 
-        //Console.WriteLine(object.ReferenceEquals(typeMaster, anotherTypeMaster));
-        //Console.WriteLine(object.ReferenceEquals(typeMaster, secondTypeMaster));
-        //Console.WriteLine(object.ReferenceEquals(secondTypeMaster, anotherTypeMaster));
+//Console.WriteLine(object.ReferenceEquals(typeMaster, anotherTypeMaster));
+//Console.WriteLine(object.ReferenceEquals(typeMaster, secondTypeMaster));
+//Console.WriteLine(object.ReferenceEquals(secondTypeMaster, anotherTypeMaster));
 
-        //Console.WriteLine($"Hello, {typeMaster.name}!");
-        //counter.Count();
-        Console.WriteLine($"Hello to everyone watching this lecture!");
+//Console.WriteLine($"Hello, {typeMaster.name}!");
+//counter.Count();
+Console.WriteLine($"Hello to everyone watching this lecture!");
 //        counter.Count();
 //        Console.WriteLine(string.Format("Hello, {0}", world));
 //        counter.Count();
+#region
+//for(int i = 50; i >= 0; i--)
+//{
+//    Console.WriteLine($"Iterator is now = {i}");
+//    if(i == 24)
+//    {
+//        Console.WriteLine("24! Hooray!");
+//    }
+//    else
+//    {
+//        Console.WriteLine("Maybe next time (*/ω＼*)");
+//    }
+//    i /= 2;
+//}
 //    }
 //}
+#endregion
 
 ////PRESS CTRL + K, U TO UNCOMMENT
+
+/*
+ * This one is a multi-line comment
+ */
