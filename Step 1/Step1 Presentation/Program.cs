@@ -1,54 +1,75 @@
-﻿using System;
+﻿//using system;
 
-namespace Step1;
+//namespace step1;
 
-public class TypeMaster
+//public class typemaster
+//{
+//    public string name = "pouria";
+//#pragma warning disable //showcase preprocessing directives
+//    private int age = 33;
+//#pragma warning restore
+//    private bool adult = true;
+//}
+
+// namespace organizer; // one file-scoped namespace is allowed
+
+//public class counter
+//{
+//    private int count = 1;
+//    //private string count = "three"; //type can contain one definition at a time
+
+//    public void count()
+//    {
+//        string localpronoun = "we";
+//        // count = true; //conversion problem
+//        // string count = "three"; //shadowing
+//        console.writeline($"{localpronoun} have greeted {count} times.");
+//        count++; //if count is string, it's a bad operand for ++ operator
+//    }
+//    // localpronoun = "you"; //scope
+//}
+
+//public static class program
+//{
+//    public static void main(string[] args)
+//    {
+//        var counter = new counter();
+//        var world = "world!";
+
+//var typemaster = new typemaster();
+//var secondtypemaster = new typemaster();
+//var anothertypemaster = typemaster;
+
+//console.writeline(object.referenceequals(typemaster, anothertypemaster));
+//console.writeline(object.referenceequals(typemaster, secondtypemaster));
+//console.writeline(object.referenceequals(secondtypemaster, anothertypemaster));
+
+//console.writeline($"hello, {typemaster.name}!");
+//counter.count();
+Console.WriteLine($"hello to everyone watching this lecture!");
+//        counter.count();
+//        console.writeline(string.format("hello, {0}", world));
+//        counter.count();
+#region
+for (int i = 50; i >= 0; i--)
 {
-    public string name = "Pouria";
-    private int age = 33;
-    private bool adult = true;
-}
-
-// namespace Organizer; // one file-scoped namespace is allowed
-
-public class Counter
-{
-    private int count = 1;
-    //private string count = "Three"; //type can contain one definition at a time
-
-    public void Count()
+    Console.WriteLine($"iterator is now = {i}");
+    if (i == 24)
     {
-        string localPronoun = "We";
-        // count = true; //conversion problem
-        // string count = "Three"; //shadowing
-        Console.WriteLine($"{localPronoun} have greeted {count} times.");
-        count++; //if count is string, it's a bad operand for ++ operator
+        Console.WriteLine("24! hooray!");
     }
-    // localPronoun = "You"; //scope
-}
-
-public static class Program
-{
-    public static void Main(string[] args)
+    else
     {
-        var counter = new Counter();
-        var typeMaster = new TypeMaster();
-        var world = "World!";
-
-        var secondTypeMaster = new TypeMaster();
-        var anotherTypeMaster = typeMaster;
-
-        Console.WriteLine(object.ReferenceEquals(typeMaster, anotherTypeMaster));
-        Console.WriteLine(object.ReferenceEquals(typeMaster, secondTypeMaster));
-        Console.WriteLine(object.ReferenceEquals(secondTypeMaster, anotherTypeMaster));
-
-        Console.WriteLine($"Hello, {typeMaster.name}!");
-        counter.Count();
-        Console.WriteLine($"Hello to everyone watching this lecture!");
-        counter.Count();
-        Console.WriteLine(string.Format("Hello, {0}", world));
-        counter.Count();
+        Console.WriteLine("maybe next time (*/ω＼*)");
     }
+    i /= 2;
 }
+    //}
+//}
+#endregion
 
-// PRESS CTRL + K, U TO UNCOMMENT
+////press ctrl + k, u to uncomment
+
+/*
+ * this one is a multi-line comment
+ */
