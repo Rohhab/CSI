@@ -1,35 +1,58 @@
-﻿namespace Calculator;
+﻿using System;
+
+namespace Calculator;
 
 public class Program
 {
     public static void Main(string[] args)
     {
-        Console.Write("Enter the first operand: ");
-        int a = int.TryParse(Console.ReadLine());
-        
-        Console.Write("Enter the second operand: ");
-        int b = int.TryParse(Console.ReadLine());
-        
-        Console.Write("Enter the operation name ['Addition', 'Subtraction', 'Multiplication', 'Division']");
-        string operation = Console.ReadLine();
-
-        switch(operation)
+        while (true)
         {
-            case "Addition":
-                Console.WriteLine(Calculator.Add(a, b));
-                break;
-            case "Subtraction":
-                Console.WriteLine(Calculator.Subtract(a, b));
-                break;
-            case "Multiplication":
-                Console.WriteLine(Calculator.Multiply(a, b));
-                break;
-            case "Division":
-                Console.WriteLine(Calculator.Divide(a, b));
-                break;
-            default:
-                Console.WriteLine("NoThInG!");
-                break;
+            int? a = Input("Enter the first operand or type 'exit' to close the program: ");
+            if (a == null) break;
+            int? b = Input("Enter the second operand or type 'exit' to close the program: ");
+            if (b == null) break;
+
+            Console.Write("Specify the operation like +, -, 'Add', 'Multiplication' etc. or type 'exit' to close the program: ");
+            string operation = Console.ReadLine()?.Trim().ToLower() ?? string.Empty;
+
+            if (operation == "exit") break;
+
+            try
+            {
+                int result = Executor(operation, a.Value, b.Value);
+                Console.WriteLine($"The result of {a.Value} {operation} {b.Value} = {result}");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"[ERROR] {ex.Message}");
+            }
+        }
+    }
+
+    static int Executor(string operation, int a, int b)
+    {
+        return operation switch
+        {
+            "+" or "add" or "addition" => Calculator.Add(a, b),
+            "-" or "subtract" or "subtraction" => Calculator.Subtract(a, b),
+            "*" or "multiply" or "multiplication" => Calculator.Multiply(a, b),
+            "/" or "divide" or "division" => Calculator.Divide(a, b),
+            _ => throw new ArgumentException("Invalid operation"),
+        };
+    }
+
+    static int? Input(string prompt)
+    {
+        Console.Write(prompt);
+        while (true)
+        {
+            var line = Console.ReadLine()?.Trim().ToLower();
+            if (line == "exit") return null;
+
+            if (int.TryParse(line, out var value)) return value;
+
+            Console.WriteLine("Invalid input, please try again.");
         }
     }
 }
@@ -37,7 +60,7 @@ public class Program
 public static class Calculator
 {
     public static int Add(int a, int b) => a + b;
-    public static int Subtract(int a, int b) => a - b; 
+    public static int Subtract(int a, int b) => a - b;
     public static int Multiply(int a, int b) => a * b;
     public static int Divide(int a, int b)
     {
