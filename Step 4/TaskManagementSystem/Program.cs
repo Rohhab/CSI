@@ -16,6 +16,15 @@ namespace TaskManagementSystem
                 DueDate = DateTime.Now.AddHours(12)
             });
 
+            string[] students = new string[1000];
+            students[0] = "Pouria";
+            students[1] = "Ali";
+            students[1] = "Reza";
+            foreach (var student in students)
+            {
+                Console.WriteLine(student);
+            }
+
             bool exit = false;
             MenuCreator();
             while (!exit)
