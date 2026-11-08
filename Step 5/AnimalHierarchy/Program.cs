@@ -6,13 +6,13 @@ internal class Program
     {
         Console.OutputEncoding = System.Text.Encoding.UTF8;
 
-        var monkey = new Mammal();
-        var mammalSound = monkey.MakeSound();
+        var dog = new Dog();
+        var dogSound = dog.MakeSound();
 
-        var owl = new Bird();
-        var birdSound = owl.MakeSound();
+        var eagle = new Eagle();
+        var eagleSound = eagle.MakeSound();
         
-        Console.WriteLine(mammalSound);
-        Console.WriteLine(birdSound);
+        Console.WriteLine(dogSound);
+        Console.WriteLine(eagleSound);
     }
 }
